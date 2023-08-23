@@ -1,0 +1,41 @@
+
+#quote {
+    font-family: 'Borel', cursive;
+    width: 80vw;
+    text-align: left;
+    font-style: italic;
+    opacity: .8;
+}
+
+#author {
+    /* font-family: 'Work Sans', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    opacity: .8;
+}
+
+body {
+    background-color: #40F8FF;
+}
+
+.date-container {
+    width: 70%;
+}
+
+.task-container {
+    width: 65%;
+}
+
+.shadow {
+    filter: drop-shadow(10px 8px .2rem rgb(151, 217, 236));
+}
+
+.task-checkbox {
+    width: 16px;
+    height: 16px;
+    min-width: 18px;
+}
+
+.margin-task-bottom {
+    margin-bottom: 6rem;
+}
