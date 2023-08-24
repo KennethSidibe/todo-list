@@ -1,0 +1,117 @@
+
+#quote {
+    font-family: 'Borel', cursive;
+    width: 80vw;
+    text-align: left;
+    font-style: italic;
+    opacity: .8;
+}
+
+#author {
+    /* font-family: 'Work Sans', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+    opacity: .8;
+}
+
+btns-hover:hover {
+    color: #0A77FC;
+}
+
+body {
+    background-color: #40F8FF;
+}
+#FFC43
+
+.date-container {
+    width: 85%;
+}
+
+#task-container {
+    width: 75%;
+}
+
+.shadow {
+    filter: drop-shadow(10px 8px .2rem rgb(151, 217, 236));
+}
+
+.task-checkbox {
+    width: 16px;
+    height: 16px;
+    min-width: 18px;
+}
+
+.margin-task-bottom {
+    margin-bottom: 6rem;
+}
+
+html {
+    height: 100%;
+}
+
+.footer-style {
+    min-height: 100px;
+    background-color: #2f99d2;
+}
+
+.footer-text {
+    /* font-family: 'Ubuntu', sans-serif; */
+    /* font-family: 'Handjet', cursive; */
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.link-color {
+    color: cyan;
+}
+
+a:hover {
+    color: rgb(101, 101, 207);
+}
+
+.add-task-label {
+    opacity: 0.5;
+    border: 0;
+    max-width: 80%;
+    min-height: 100%;
+}
+
+.add-task-label:focus {
+    outline: none;
+    border: none;  /* Remove the border */
+    box-shadow: inset 0 -3px 0 0 #81631b;
+}
+
+.app-title {
+    font-family: 'Barriecito', cursive;
+    font-size: 3rem;
+    text-shadow: 1px 1px 2px rgb(90, 89, 89);
+}
+
+.app-sub-headline {
+    font-size: small;
+    font-weight: 200;
+}
+
+.new-task-btn {
+    border: 0;
+    background-color: white;
+}
+
+.setting-btn {
+    border: 0;
+    background-color: #40f8ff;
+}
+
+.btn-icon {
+    color: #0A77FC;
+}
+
+.btn-icon:hover {
+    color: #0e4b95;
+}
+
+.invisible-stroke {
+    visibility: hidden;
+}
