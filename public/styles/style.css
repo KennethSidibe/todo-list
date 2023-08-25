@@ -27,8 +27,12 @@ body {
     width: 85%;
 }
 
-#task-container {
-    width: 75%;
+.task-container {
+    width: 87%;
+}
+
+#new-task-container {
+    width: 87%;
 }
 
 .shadow {
@@ -75,6 +79,7 @@ a:hover {
     border: 0;
     max-width: 80%;
     min-height: 100%;
+    background-color: white;
 }
 
 .add-task-label:focus {
@@ -114,4 +119,8 @@ a:hover {
 
 .invisible-stroke {
     visibility: hidden;
+}
+
+.task-checkbox {
+    background-color: #0d6efd;
 }

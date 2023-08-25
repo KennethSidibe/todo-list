@@ -7,22 +7,26 @@
     
     <div class="container text-center pt-5 pb-1" >
         <h1 class="app-title" >I'll do it Now!</h1>
-        <h3 class="app-sub-headline"  >The app</h3>
+        <h3 class="app-sub-headline">The app</h3>
     </div>
+    
 
     <div class="container inspiration-container my-4 mx-auto w-75">
-
-        <h5 id="quote" class="mb-0">"There is no happiness except in the realization that we have accomplished something."</h5>
-        <p id="author" class=""> -Mark Zuckerberg</p>
-
+        <% if (locals.quote && locals.author) { %>
+            <h5 id="quote" class="mb-0"> <%= locals.quote %> </h5>
+            <p id="author" class=""> -<%= locals.author %>  </p>
+        <% } else { %>
+            <h5 id="quote" class="mb-0">"There is no happiness except in the realization that we have accomplished something."</h5>
+            <p id="author" class=""> -Mark Zuckerberg</p>
+        <% } %>
+        
     </div>
 
-    
 
     <div class="container icons-container my-3 d-flex justify-content-center gap-4 align-items-center ms-1"> 
 
             <div class="calendar"> 
-                <form action="/">
+                <form action="/" method="post">
                     <button type="submit" class="setting-btn" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor" class="btn-icon bi bi-calendar3" viewBox="0 0 16 16">
                             <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
@@ -33,7 +37,7 @@
             </div>
 
             <div class="briefcase">
-                <form action="/">
+                <form action="/" method="post">
                     <button type="submit" class="setting-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor" class="btn-icon bi bi-briefcase-fill" viewBox="0 0 16 16">
                             <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
@@ -44,7 +48,7 @@
             </div>
 
             <div class="palette">
-                <form action="/">
+                <form action="/" method="post">
                     <button type="submit" class="setting-btn" >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" class="btn-icon bi bi-palette" viewBox="0 0 16 16">
                             <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
@@ -58,7 +62,7 @@
 
     <div class="container">
         <div class="mx-auto text-center bg-white date-container py-3 rounded-4 shadow">
-            <h5 class="pt-1 date">Tuesday, 22 Aug</h5>
+            <h5 class="pt-1" id="currentDate" > <script> date </script> </h5>
             <p>Let's Work!</p>
         </div>
     </div>
@@ -67,30 +71,41 @@
         <img src="./images/main_stroke.png"  width="200"  class="img-fluid mx-auto"  alt="">
     </div>   
 
+    <div class="tasks-container">
 
-    <div class="container" id="task-container">
-        <form action="/" class="d-flex gap-3 align-items-center mx-auto py-3 bg-white task-container rounded-4 px-3 ">
-            <button type="submit" class="new-task-btn d-flex justify-content-start align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30"  fill="#FFC436" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-              </svg>
-            </button>
-            
-            <input type="text" autocomplete="off" name="newTask" placeholder="Your super task" class="add-task-label">
-            
-        </form>
+        <% if(locals.tasks) { %>
+
+            <% for( let i = 0; i < locals.tasks.length; i++ ) { %>
+
+                <% var taskText = locals.tasks[i]; %>
+
+                <%- include('partials/task-module.ejs', {"taskText":taskText}) %>
+
+                <%- include('partials/space-stroke.ejs') %>
+
+            <% } %>
+
+            <%- include('partials/new-task-module.ejs') %>
+
+    <% } else { %>
+
+        <%- include('partials/new-task-module.ejs') %>
+
+    <% } %>
+
     </div>
-
-    <div class="text-center mt-3 my-4" >
-        <img src="./images/line_stroke.png"  width="200"  class=" invisible-stroke img-fluid mx-auto"  alt="">
-    </div> 
-
 
     <%- include('partials/footer.ejs') %>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!-- Home JS -->
+    <script src="./scripts/script.js"></script>
+    
 </body>
 
 </html>
