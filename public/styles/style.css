@@ -20,6 +20,7 @@ btns-hover:hover {
 
 body {
     background-color: #40F8FF;
+    min-height: 100vh;
 }
 #FFC43
 
@@ -49,8 +50,9 @@ body {
     margin-bottom: 6rem;
 }
 
-html {
-    height: 100%;
+footer {
+    position: sticky;
+    top: 100%;
 }
 
 .footer-style {
@@ -182,9 +184,18 @@ a:hover {
     font-family: 'Gluten', cursive;
 }
 
-@media (min-width:1000px) {
+@media (min-width:992px) {
     .setting-modal {
         width: 50vw;
+    }
+    .date-container {
+        width: 70%;
+    }
+    .quote-container {
+        width: 70%;
+    }
+    .task-container {
+        width: 60%;
     }
 }
 

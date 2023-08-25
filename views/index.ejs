@@ -6,24 +6,26 @@
 <body>
     
     
-    <div class="container text-center pt-5 pb-1" >
-        <h1 class="app-title" >I'll do it Now!</h1>
-        <h3 class="app-sub-headline">The app</h3>
-    </div>
-    
+    <div class="container pt-5 pb-1" >
+        <div class="pb-5">
+            <h1 class="app-title text-center" >I'll do it Now!</h1>
+            <h3 class="app-sub-headline text-center">The app</h3>
+        </div>
 
-    <div class="container inspiration-container my-4 mx-auto w-75">
-        <% if (locals.quote && locals.author) { %>
-            <h5 id="quote" class="mb-0"> <%= locals.quote %> </h5>
-            <p id="author" class=""> -<%= locals.author %>  </p>
-        <% } else { %>
-            <h5 id="quote" class="mb-0">"There is no happiness except in the realization that we have accomplished something."</h5>
-            <p id="author" class=""> -Mark Zuckerberg</p>
-        <% } %>
-        
+        <div class="quote-container mx-auto" >
+            <% if (locals.quote && locals.author) { %>
+                <h5 id="quote" class="mb-0"> <%= locals.quote %> </h5>
+                <p id="author" class=""> -<%= locals.author %>  </p>
+            <% } else { %>
+                <h5 id="quote" class="mb-0">"There is no happiness except in the realization that we have accomplished something."</h5>
+                <p id="author" class=""> -Mark Zuckerberg</p>
+            <% } %>
+        </div>
+
     </div>
 
-    <div class="container icons-container my-3 d-flex justify-content-center gap-4 align-items-center ms-1"> 
+
+    <div class="container icons-container my-3 d-flex justify-content-center gap-4 align-items-center "> 
 
             <div class="calendar"> 
                 <form action="/" method="GET">
@@ -58,7 +60,7 @@
 
     </div>
 
-    <div class="container">
+    <div class="container w-100 ">
         <div class="mx-auto text-center bg-white date-container py-3 rounded-4 shadow">
             <h5 class="pt-1" id="currentDate"> </h5>
             <% if(locals.workEnvironment && locals.workEnvironment === "true") {  %>
