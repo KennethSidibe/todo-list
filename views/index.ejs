@@ -5,6 +5,7 @@
 
 <body>
     
+    
     <div class="container text-center pt-5 pb-1" >
         <h1 class="app-title" >I'll do it Now!</h1>
         <h3 class="app-sub-headline">The app</h3>
@@ -22,12 +23,11 @@
         
     </div>
 
-
     <div class="container icons-container my-3 d-flex justify-content-center gap-4 align-items-center ms-1"> 
 
             <div class="calendar"> 
-                <form action="/" method="post">
-                    <button type="submit" class="setting-btn" >
+                <form action="/" method="GET">
+                    <button type="submit" class="setting-btn" name="workEnvironment" value="true" >
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor" class="btn-icon bi bi-calendar3" viewBox="0 0 16 16">
                             <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
                             <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
@@ -37,9 +37,9 @@
             </div>
 
             <div class="briefcase">
-                <form action="/" method="post">
-                    <button type="submit" class="setting-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="currentColor" class="btn-icon bi bi-briefcase-fill" viewBox="0 0 16 16">
+                <form action="/work" method="POST">
+                    <button type="submit" class="setting-btn" name="workEnvironment" value="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20"  fill="currentColor" class="btn-icon bi bi-briefcase-fill" viewBox="0 0 16 16">
                             <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z"/>
                             <path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z"/>
                           </svg>
@@ -47,23 +47,29 @@
                 </form>
             </div>
 
-            <div class="palette">
-                <form action="/" method="post">
-                    <button type="submit" class="setting-btn" >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" class="btn-icon bi bi-palette" viewBox="0 0 16 16">
-                            <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                            <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z"/>
-                        </svg>
-                    </button>
-                </form>
+            <div>
+                <button id="palette" class="setting-btn" >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" class="btn-icon bi bi-palette" viewBox="0 0 16 16">
+                        <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z"/>
+                    </svg>
+                </button>
             </div>
 
     </div>
 
     <div class="container">
         <div class="mx-auto text-center bg-white date-container py-3 rounded-4 shadow">
-            <h5 class="pt-1" id="currentDate" > <script> date </script> </h5>
-            <p>Let's Work!</p>
+            <h5 class="pt-1" id="currentDate"> </h5>
+            <% if(locals.workEnvironment && locals.workEnvironment === "true") {  %>
+
+                <p id="work-environnement">Work List</p>
+            
+            <% } else {  %>
+
+                <p id="work-environnement">Today List</p>
+
+            <% } %>
         </div>
     </div>
 
@@ -73,7 +79,7 @@
 
     <div class="tasks-container">
 
-        <% if(locals.tasks) { %>
+    <% if(locals.tasks) { %>
 
             <% for( let i = 0; i < locals.tasks.length; i++ ) { %>
 
@@ -96,6 +102,57 @@
     </div>
 
     <%- include('partials/footer.ejs') %>
+
+    <div id="modal-container" >
+        
+        <div class="setting-modal rounded-4" >
+            <h1 class="modal-title" >Let's Style</h1>
+            
+            <p class="background-image-text" >Background Image</p>
+
+            <div id="image-selector-container" class="container bg-images-container rounded-5 mb-4" style="height: 100px;">
+                <div class="row align-items-center h-100">
+                    <div class="col text-center ms-1">
+                        <img src="/images/dragon.png" class="img-fluid bg-image-select" alt="">
+                    </div>
+                    <div class="col text-center d-flex flex-row justify-content-around">
+                        <img src="/images/basketball.png" class=" img-fluid bg-image-select" alt="">
+                    </div>
+                    <div class="col text-center">
+                        <img src="/images/money.png" class="img-fluid bg-image-select" alt="">
+                    </div>
+                    <div class="col text-center me-1">
+                        <img src="/images/heart.png" class="img-fluid bg-image-select " alt="heart image">
+                    </div>
+                </div>
+            </div>
+
+            <p class="background-image-text" >Background Color</p>
+
+            <div id="color-selector-container" class="container bg-images-container rounded-5 my-2" style="height: 100px;">
+                <div class="row align-items-center h-100">
+                    <div class="col d-flex justify-content-center text-center ms-1">
+                        <div class="rounded-4 bg-primary" style="width: 60px; height:60px;" ></div>
+                    </div>
+
+                    <div class="col d-flex justify-content-center text-center ms-1">
+                        <div class="rounded-4 bg-warning" style="width: 60px; height:60px;" ></div>
+                    </div>
+
+                    <div class="col d-flex justify-content-center text-center ms-1">
+                        <div class="rounded-4 bg-success" style="width: 60px; height:60px;" ></div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-evenly mt-4 mb-2" >
+                <button class="btn btn-warning px-4">Apply</button>
+                <button id="reset-changes" class="btn btn-outline-dark px-4">Reset</button>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>

@@ -6,6 +6,16 @@ $('.task-checkbox').change(function() {
     }
 });
 
+$("#palette").click(function() {
+    $('#modal-container').addClass('show');
+});
+
+$('#reset-changes').click(function() {
+    $('#modal-container').removeClass('show');
+
+});
+
+
 function getCurrentDayFormatted() {
     const date = new Date();
     

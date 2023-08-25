@@ -124,3 +124,63 @@ a:hover {
 .task-checkbox {
     background-color: #0d6efd;
 }
+
+#modal-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top:0;
+    height: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#modal-container.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.setting-modal {
+    background-color: #40F8FF;
+    width: 100%;
+    padding: 10px;
+    margin: 0px 20px;
+    text-align: center;
+}
+
+.background-image-text {
+    font-size: larger;
+    font-family: 'Comfortaa', cursive;
+    letter-spacing: 5px;
+    font-weight: 100;
+}
+
+.bg-images-container {
+    background-color: white;
+}
+
+.bg-image-select {
+    max-height: 70px; 
+    width: auto;
+}
+
+.bg-images-container .col:hover {
+    border: solid 2px black;
+}
+
+.modal-title {
+    font-family: 'Gluten', cursive;
+}
+
+@media (min-width:1000px) {
+    .setting-modal {
+        width: 50vw;
+    }
+}
+
+

@@ -8,7 +8,12 @@ import * as Quote from "inspirational-quotes";
 const app = express();
 const port = 3000;
 
-var tasks = ["Wash the dishes", "Send letter"];
+var today = true;
+var todayTasks = ["Wash the dishes", "Send letter"];
+var workTasks = ['Close all the sales', 'Do the taxes'];
+const quoteObj = Quote.getQuote();
+const quote = quoteObj['text'];
+const author = quoteObj['author'];
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,22 +23,28 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-    var quoteObj = Quote.getQuote();
-    var quote = quoteObj['text'];
-    var author = quoteObj['author'];
-
-    console.log("quote:",quote);
-    console.log("author:", author);
+    
     res.render(__dirname + "/views/index.ejs", {
-        tasks: tasks,
+        tasks: todayTasks,
         quote:quote,
         author:author  
+    });
+});
+
+app.post('/work', (req,res) => {
+    if(req.body.workEnvironment === "true") {
+        res.render(__dirname + "/views/index.ejs", {
+            tasks: workTasks,
+            quote:quote,
+            author:author,
+            workEnvironment:'true' 
         });
+    }
 });
 
 app.post("/add-task", (req, res) => {
-    tasks.push(req.body.newTask);
+    todayTasks.push(req.body.newTask);
     res.render(__dirname + "/views/index.ejs", {
-        tasks:tasks
+        tasks:todayTasks
     });
 });
