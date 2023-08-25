@@ -106,7 +106,7 @@ a:hover {
 
 .setting-btn {
     border: 0;
-    background-color: #40f8ff;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .btn-icon {
@@ -169,8 +169,13 @@ a:hover {
     width: auto;
 }
 
-.bg-images-container .col:hover {
-    border: solid 2px black;
+.select-border {
+    filter: drop-shadow(0 0 0.75rem rgb(62, 6, 17));
+}
+
+.bg-images-container .col > :hover {
+    filter: drop-shadow(0 0px .4rem rgba(0, 0, 0, .7));
+
 }
 
 .modal-title {

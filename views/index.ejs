@@ -107,25 +107,6 @@
         
         <div class="setting-modal rounded-4" >
             <h1 class="modal-title" >Let's Style</h1>
-            
-            <p class="background-image-text" >Background Image</p>
-
-            <div id="image-selector-container" class="container bg-images-container rounded-5 mb-4" style="height: 100px;">
-                <div class="row align-items-center h-100">
-                    <div class="col text-center ms-1">
-                        <img src="/images/dragon.png" class="img-fluid bg-image-select" alt="">
-                    </div>
-                    <div class="col text-center d-flex flex-row justify-content-around">
-                        <img src="/images/basketball.png" class=" img-fluid bg-image-select" alt="">
-                    </div>
-                    <div class="col text-center">
-                        <img src="/images/money.png" class="img-fluid bg-image-select" alt="">
-                    </div>
-                    <div class="col text-center me-1">
-                        <img src="/images/heart.png" class="img-fluid bg-image-select " alt="heart image">
-                    </div>
-                </div>
-            </div>
 
             <p class="background-image-text" >Background Color</p>
 
@@ -140,15 +121,15 @@
                     </div>
 
                     <div class="col d-flex justify-content-center text-center ms-1">
-                        <div class="rounded-4 bg-success" style="width: 60px; height:60px;" ></div>
+                        <div class="rounded-4" style="width: 60px; height:60px; background-color: #40f8ff;" ></div>
                     </div>
                     
                 </div>
             </div>
 
-            <div class="d-flex justify-content-evenly mt-4 mb-2" >
-                <button class="btn btn-warning px-4">Apply</button>
-                <button id="reset-changes" class="btn btn-outline-dark px-4">Reset</button>
+            <div class="d-flex justify-content-evenly mt-4 mb-2" id="apply-changes" >
+                <button type="button"  class="btn btn-warning px-4">Apply</button>
+                <button id="reset-changes" class="btn btn-outline-dark px-4">Close</button>
             </div>
 
         </div>

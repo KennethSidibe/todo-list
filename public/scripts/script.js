@@ -12,7 +12,6 @@ $("#palette").click(function() {
 
 $('#reset-changes').click(function() {
     $('#modal-container').removeClass('show');
-
 });
 
 
@@ -34,3 +33,15 @@ var date = getCurrentDayFormatted();
   
 
 $('.task-container').last().parent().addClass("pb-3");
+
+$('.bg-images-container .col').click(function() {
+    $('.bg-images-container .col').removeClass('select-border');
+    $(this).addClass('select-border');
+});
+
+$('#apply-changes').click(function (){
+    var userBackgroundColor = $('.select-border').children().css("background-color");
+    console.log(userBackgroundColor);
+    $('body').css('background-color', userBackgroundColor);
+    $('#modal-container').removeClass('show');
+});
